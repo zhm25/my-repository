@@ -1,7 +1,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {Game,RULES,W,H,key}=require('../game.js');
-function sandbox(){const g=new Game();g.think=()=>{};g.terrain.fill('plain');return g;}
+function sandbox(){const g=new Game();g.think=()=>{};g.terrain.fill('plain');for(const e of g.entities)e.x+=e.side?-2:2;g.updateNetwork();g.updateVision();return g;}
 function run(g,seconds){for(let i=0;i<seconds*10&&g.winner===null;i++)g.tick(.1);}
 test('地图对称、起点可通行，同种子可复现',()=>{const a=new Game({seed:42}),b=new Game({seed:42});assert.deepEqual(a.terrain,b.terrain);for(let y=0;y<H;y++)for(let x=0;x<W;x++)assert.equal(a.terrain[key(x,y)],a.terrain[key(W-1-x,y)]);assert.ok(a.path({x:3,y:11},{x:28,y:11}));});
 test('能源不足时独立施工会暂停，不能凭空建成建筑',()=>{const g=sandbox(),e=g.owned(0,'engineer')[0];assert.equal(g.planBuild(e,'outpost',3,19,false),null);run(g,50);const out=g.owned(0,'outpost')[0];assert.ok(out.progress>0&&out.progress<=60.001);assert.ok(e.energy<.01);assert.equal(out.production,5);assert.equal(out.energy,0);});

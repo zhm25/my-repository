@@ -3,6 +3,8 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>能源前线 · Energy Frontier</title><style>
 :root{color-scheme:dark;--bg:#0b111b;--panel:#121c2a;--line:#253448;--text:#dce6f3;--muted:#8b9cb3;--blue:#51c6f5;--red:#fb7a7a;--green:#90d3aa}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#1a2b40,transparent 50%),var(--bg);font:14px/1.65 system-ui,-apple-system,"Segoe UI","Microsoft Yahei",sans-serif;color:var(--text)}header{max-width:1480px;margin:auto;padding:23px 28px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px}.brand-mark{font-size:38px;color:var(--blue)}h1{font-size:23px;margin:0;letter-spacing:2px}h1 small{font-size:10px;letter-spacing:3px;color:var(--muted);margin-left:10px}.brand p{color:var(--muted);font-size:12px;margin:0}.top-actions{display:flex;gap:10px}button,select,input{font:inherit;border:1px solid #34475e;border-radius:7px;background:#192637;color:var(--text);padding:8px 12px}button{cursor:pointer;transition:background .15s,border-color .15s}button:hover{background:#263b51;border-color:var(--blue)}button:disabled{opacity:.4;cursor:not-allowed}button.active,.primary{background:#1c6681;border-color:#4ba9c9;color:#effcff}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}main{max-width:1480px;margin:auto;padding:0 28px 28px;display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px}.battle-area{min-width:0}.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}.live{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted)}.live i{height:7px;width:7px;border-radius:50%;background:var(--green);box-shadow:0 0 9px #90d3aa66}#clock{font-variant-numeric:tabular-nums;color:var(--text)}.time-controls{display:flex;gap:6px}.time-controls button,.time-controls select{font-size:12px;padding:6px 9px}.map-wrap{position:relative;border:1px solid #33485d;box-shadow:0 12px 40px #0004;border-radius:9px;overflow:hidden;background:#080e17}canvas{display:block;width:100%;height:auto;cursor:crosshair}#banner{position:absolute;top:40%;left:10%;right:10%;text-align:center;background:#101d30ed;border:1px solid var(--blue);padding:25px;font-size:23px;font-weight:bold;border-radius:10px;pointer-events:none}#banner small{display:block;font-size:13px;font-weight:normal;color:var(--muted)}.map-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px;font-size:10px;color:var(--muted);padding:10px 2px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin:0 5px 0 8px}.blue{background:var(--blue)}.red{background:var(--red)}.command-hint{border-left:3px solid var(--blue);background:#152538;color:#b8def2;padding:10px 12px;font-size:12px;min-height:42px;border-radius:3px}.event-panel{margin-top:18px}.section-title{font-size:12px;font-weight:650;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.section-title span{font-size:9px;font-weight:400;letter-spacing:1px;color:var(--muted)}#log{height:130px;overflow:auto;font-size:11px;color:var(--muted)}.log-entry{padding:4px 0;border-bottom:1px solid #1e2b3c}.log-entry time{font-variant-numeric:tabular-nums;color:#5e849f;margin-right:10px}aside{display:flex;flex-direction:column;gap:13px}.panel{padding:17px;background:linear-gradient(145deg,#162231,#101925);border:1px solid var(--line);border-radius:9px}.compact p,.muted{font-size:11px;color:var(--muted)}.compact p{margin:6px 0}.view-label{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;margin-top:13px}.view-label select{padding:4px 6px;font-size:11px}.resource-row{display:flex;justify-content:space-between;margin:5px 0;font-size:12px}.resource-row strong{color:var(--blue);font-variant-numeric:tabular-nums}.faction-card+.faction-card{border-top:1px solid var(--line);padding-top:9px;margin-top:9px}.unit-title{font-size:19px;font-weight:650;margin:0 0 3px}.unit-description{font-size:11px;color:var(--muted);min-height:30px}.stat{font-size:11px;display:flex;justify-content:space-between;margin-top:9px}.bar{height:5px;background:#263446;border-radius:5px;margin-top:4px;overflow:hidden}.bar div{height:100%;background:var(--green)}.bar.energy div{background:#e3bc69}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}.metrics div{background:#0d1724;padding:8px 2px;text-align:center;font-size:16px;border-radius:4px}.metrics small{display:block;font-size:9px;color:var(--muted)}#actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}#actions button{font-size:11px;padding:7px 9px}.build-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px}.build-grid button{font-size:12px;text-align:left;padding:10px}.build-grid small{display:block;font-size:10px;color:var(--muted)}.check{display:flex;gap:5px;align-items:center;font-size:11px;color:#adbed1}.check input{accent-color:var(--blue)}dialog{max-width:510px;width:calc(100% - 30px);border:1px solid #3a536d;border-radius:14px;background:#142132;color:var(--text);padding:30px;box-shadow:0 30px 100px #0009}dialog::backdrop{background:#040b15cc;backdrop-filter:blur(5px)}dialog h2{font-size:25px;margin:9px 0 14px}dialog p{color:#aabbd0;font-size:13px}dialog label{display:block;margin:18px 0;color:#bbcadd;font-size:12px}dialog label select,dialog label input{display:block;width:100%;margin-top:6px}dialog .primary{width:100%;margin-top:12px;padding:11px}.eyebrow{font-size:10px;letter-spacing:3px;color:var(--blue)}@media(min-width:1500px){main,header{max-width:1560px}}@media(max-width:1050px){main{grid-template-columns:minmax(0,1fr) 270px;padding:0 15px 20px;gap:12px}header{padding:18px 15px}.panel{padding:12px}h1 small{display:none}}@media(max-width:760px){main{grid-template-columns:1fr}aside{display:grid;grid-template-columns:1fr 1fr;align-items:start}.toolbar{margin-top:4px}.top-actions button{font-size:11px}.panel{min-width:0}.brand p{font-size:10px}h1{font-size:19px}.time-controls{gap:3px}.live{gap:6px}.compact{display:none}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
+.map-settings{border:1px solid var(--line);border-radius:8px;padding:8px 14px;margin:16px 0}.map-settings legend{font-size:12px;color:var(--blue)}.map-settings label{margin:8px 0}.terrain-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.terrain-inputs input{min-width:0;padding:7px}.map-settings .muted{margin-bottom:5px}dialog{max-height:92vh;overflow:auto}
+
 </style></head>
 <body>
 <header><div class="brand"><span class="brand-mark">◈</span><div><h1>能源前线 <small>ENERGY FRONTIER</small></h1><p>连接能源 · 推进战线 · 攻陷核心</p></div></div><div class="top-actions"><button id="help">操作指南</button><button id="restart">新战局</button></div></header>
@@ -21,13 +23,14 @@
 <section class="panel compact"><div class="section-title">战场规则</div><p>大本营失守即失败。节点间距至少 6 格。建筑靠库存运行，管道断裂会切断输送。部队缺能时停火并低速撤退。</p><p class="muted">管道仅连接相邻格；供能建筑周围 3 格、有效管道旁可为部队补给。蓝色 / 红色亮线表示有能源源头的管网。</p></section>
 </aside>
 </main>
-<dialog id="setup"><form method="dialog"><div class="eyebrow">TACTICAL ENERGY WARFARE</div><h2>部署你的能源前线</h2><p>从一座核心出发，建设补给线，以三支精锐战斗群争夺战场。</p><label>战局模式<select id="mode"><option value="human">玩家对电脑 · 战争迷雾</option><option value="ai">电脑对电脑 · 观战测试</option></select></label><label>地图种子<input id="seed" type="number" value="2026" min="1" max="999999999"></label><p class="muted">同一种子产生相同地图。暂停时仍可下令；观战支持双方视角与全图。</p><button class="primary" id="start" value="start">开始部署 →</button></form></dialog>
+<dialog id="setup"><form method="dialog"><div class="eyebrow">TACTICAL ENERGY WARFARE</div><h2>部署你的能源前线</h2><p>从一座核心出发，建设补给线，以三支精锐战斗群争夺战场。</p><label>战局模式<select id="mode"><option value="human">玩家对电脑 · 战争迷雾</option><option value="ai">电脑对电脑 · 观战测试</option></select></label><label>地图种子<input id="seed" type="number" value="2026" min="1" max="999999999"></label><fieldset class="map-settings"><legend>地图生成设置</legend><label>对称性<select id="map-symmetry"><option value="mirror">左右镜像 · 公平起点</option><option value="rotation">中心对称 · 旋转 180°</option><option value="none">不对称 · 随机战场</option></select></label><div class="terrain-inputs"><label>山地格数<input id="map-mountains" type="number" min="0" max="280" step="2" value="140" required></label><label>水域格数<input id="map-water" type="number" min="0" max="140" step="2" value="36" required></label><label>富能源区格数<input id="map-resources" type="number" min="0" max="100" step="2" value="18" required></label></div><p class="muted">全图 704 格，其余为平原。对称地图按成对地块生成；保留出生安全区和连通走廊。极端组合不足时优先安排山地、水域，余量分给资源区。</p></fieldset><p class="muted">相同种子与设置产生相同地图。暂停时仍可下令；观战支持双方视角与全图。</p><button class="primary" id="start" value="start">开始部署 →</button></form></dialog>
 <dialog id="guide"><h2>指挥官简报</h2><p><b>选择与下令：</b>左键选中，右键移动 / 攻击。选部队后按“进攻移动”再点击地面。空格暂停，Esc 取消工具。</p><p><b>扩张：</b>选择工程队 → 分据点 → 点击合法位置。勾选自动规划会从最近己方节点向目标铺管。手动铺管时点起点和终点，可按住 Shift 追加路线。</p><p><b>施工：</b>工程队初始携带 60 能源，管道每格用 4；据点用 240，导弹基地用 180，均需持续施工。缺能自动等待，恢复补给后继续。</p><p><b>作战：</b>大本营可补充战斗群（最多 3 支）和工程队（最多 2 支）。选中战斗群可在供能建筑附近升级或修复。不要让部队远离补给太久。</p><p><b>废墟：</b>工程队选择重建，再点击废墟；任一方都能以原价 60% 重建。部队右键可彻底摧毁废墟。大本营毁灭立即结束战局。</p><p><b>观战：</b>新战局选择电脑对电脑，可切换视野、加速，或暂停后单步观察。所有电脑遵守迷雾和能源规则。</p><button id="close-guide" class="primary">收到，返回战场</button></dialog>
 <script>
 /* Energy Frontier — dependency-free simulation, shared by browser and tests. */
 (function(root){
 'use strict';
-const W=32,H=22;
+const W=32,H=22,MAX_LEVEL=20;
+const DEFAULT_MAP={symmetry:"mirror",mountains:140,water:36,resources:18};
 const RULES={
  hq:{name:'大本营',hp:800,armor:35,attack:14,range:3.5,rate:1.4,cap:500,production:9,drain:.5,cost:0},
  outpost:{name:'分据点',hp:320,armor:20,cap:220,production:5,drain:.4,cost:240},
@@ -39,20 +42,48 @@ const RULES={
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),key=(x,y)=>y*W+x;
 function rng(seed){let n=seed>>>0;return()=>{n+=0x6D2B79F5;let t=n;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
 class Game{
- constructor({seed=2026,mode='human'}={}){
+ constructor({seed=2026,mode='human',map={}}={}){
   this.seed=seed;this.mode=mode;this.random=rng(seed);this.time=0;this.entities=[];this.id=1;this.winner=null;this.logs=[];this.effects=[];this.aiClock=0;this.networkClock=0;this.visionClock=0;this.seen=[new Set(),new Set()];this.visible=[new Set(),new Set()];this.memory=[new Map(),new Map()];this.aiState=['发展','发展'];this.terrain=Array(W*H).fill('plain');
-  for(let y=1;y<H-1;y++)for(let x=6;x<W/2;x++){
-   const r=this.random();let type=r<.10?'mountain':r<.15?'water':r<.23?'resource':'plain';
-   if(y===5||y===11||y===17||x===15)type='plain';
-   this.terrain[key(x,y)]=type;this.terrain[key(W-1-x,y)]=type;
+  this.mapSettings={...DEFAULT_MAP,...map};
+  if(!['mirror','rotation','none'].includes(this.mapSettings.symmetry))this.mapSettings.symmetry='mirror';
+  for(const [field,max]of [['mountains',280],['water',140],['resources',100]]){
+   const value=Number(this.mapSettings[field]);this.mapSettings[field]=Math.max(0,Math.min(max,Number.isFinite(value)?Math.floor(value):DEFAULT_MAP[field]));
+   if(this.mapSettings.symmetry!=='none')this.mapSettings[field]-=this.mapSettings[field]%2;
   }
-  for(const [x,y] of [[8,7],[8,15],[13,3],[13,18]]){this.terrain[key(x,y)]='resource';this.terrain[key(W-1-x,y)]='resource';}
+  this.spawns=[{x:1,y:11},{x:30,y:this.mapSettings.symmetry==='rotation'?10:11}];
+  this.generateMap();
   for(let side=0;side<2;side++){
-   const x=side?28:3;this.add('hq',side,x,11,{energy:350});this.add('engineer',side,x,12);this.add('army',side,x+(side?-1:1),11);
+   const {x,y}=this.spawns[side];this.add('hq',side,x,y,{energy:350});this.add('engineer',side,x,y+(side&&this.mapSettings.symmetry==='rotation'?-1:1));this.add('army',side,x+(side?-1:1),y);
   }
   this.updateNetwork();this.updateVision();this.log('战局开始：保护大本营，向富能源区扩张。');
  }
- add(type,side,x,y,extra={}){const r=RULES[type];const e={id:this.id++,type,side,x,y,hp:r.hp,maxHp:r.hp,armor:r.armor,attack:r.attack||0,range:r.range||0,cap:r.cap,energy:r.cap,drain:r.drain,production:r.production||0,cooldown:0,level:1,jobs:[],path:[],order:null,connected:false,component:null,dead:false,ruin:false,building:!['army','engineer','pipe'].includes(type),progress:null,...extra};if(type==='outpost'&&this.terrain[key(Math.round(x),Math.round(y))]==='resource')e.production=8;this.entities.push(e);return e;}
+ generateMap(){
+  const symmetry=this.mapSettings.symmetry,groups=[],visited=new Set();
+  const protectedCell=(x,y)=>x===1||x===30||y===11||(symmetry==='rotation'&&y===10)||this.spawns.some(p=>Math.abs(x-p.x)<=1&&Math.abs(y-p.y)<=1);
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){
+   const k=key(x,y);if(visited.has(k))continue;
+   const pair=symmetry==='mirror'?[W-1-x,y]:symmetry==='rotation'?[W-1-x,H-1-y]:null;
+   const cells=[[x,y]];if(pair&&key(...pair)!==k)cells.push(pair);
+   for(const p of cells)visited.add(key(...p));if(cells.some(p=>protectedCell(...p)))continue;groups.push(cells);
+  }
+  for(let i=groups.length-1;i>0;i--){const j=Math.floor(this.random()*(i+1));[groups[i],groups[j]]=[groups[j],groups[i]];}
+  let cursor=0;
+  for(const [field,type]of [['mountains','mountain'],['water','water'],['resources','resource']]){
+   let count=0;while(cursor<groups.length&&count+groups[cursor].length<=this.mapSettings[field]){for(const p of groups[cursor])this.terrain[key(...p)]=type;count+=groups[cursor++].length;}this.mapSettings[field]=count;
+  }
+ }
+ upgradeCost(e){return Math.round(90*Math.pow(1.4,e.level-1)/10)*10;}
+ upgradeBase(e){return this.owned(e.side).find(n=>n.production&&n.progress===null&&distance(n,e)<=3);}
+ upgradeSources(e){const base=this.upgradeBase(e);return base?(base.component?.sources||[base]):[];}
+ investUpgrade(e,limit){
+  if(!e.upgrading)return 0;let spent=0;
+  for(const n of this.upgradeSources(e)){const amount=Math.min(n.energy,e.upgrading.cost-e.upgrading.paid,limit-spent);if(amount<=0)continue;n.energy-=amount;e.upgrading.paid+=amount;spent+=amount;}
+  if(e.upgrading.paid>=e.upgrading.cost-.001){
+   e.level++;const hp=40+4*(e.level-2);e.maxHp+=hp;e.hp=Math.min(e.maxHp,e.hp+hp);e.attack+=6+2*Math.floor((e.level-2)/3);e.armor+=8;e.cap+=15;e.range+=.06;e.speed+=.018;e.upgrading=null;
+   this.log('战斗群升级至 Lv.'+e.level+'。',e.side);
+  }return spent;
+ }
+ add(type,side,x,y,extra={}){const r=RULES[type];const e={id:this.id++,type,side,x,y,hp:r.hp,maxHp:r.hp,armor:r.armor,attack:r.attack||0,range:r.range||0,cap:r.cap,energy:r.cap,drain:r.drain,production:r.production||0,cooldown:0,level:1,speed:r.speed||0,upgrading:null,jobs:[],path:[],order:null,connected:false,component:null,dead:false,ruin:false,building:!['army','engineer','pipe'].includes(type),progress:null,...extra};if(type==='outpost'&&this.terrain[key(Math.round(x),Math.round(y))]==='resource')e.production=8;this.entities.push(e);return e;}
  log(text,side=null){this.logs.unshift({time:this.time,text,side});if(this.logs.length>100)this.logs.pop();}
  get(id){return this.entities.find(e=>e.id===id&&!e.dead);}
  owned(side,type){return this.entities.filter(e=>!e.dead&&!e.ruin&&e.side===side&&(!type||e.type===type));}
@@ -88,6 +119,7 @@ class Game{
   for(const c of this.components){if(!c.active)continue;let budget=32*dt;const consumers=c.nodes.filter(e=>!e.production&&e.cap>0&&e.progress===null);for(const e of this.owned(c.side).filter(e=>!e.building&&e.type!=='pipe')){if(this.supplyComponent(e)===c)consumers.push(e);}
    consumers.sort((a,b)=>(a.type==='engineer'?0:1)-(b.type==='engineer'?0:1)||a.energy/a.cap-b.energy/b.cap);
    for(const e of consumers){let need=Math.min(e.cap-e.energy,12*dt,budget);for(const source of c.sources){const amount=Math.min(need,source.energy);source.energy-=amount;e.energy+=amount;need-=amount;budget-=amount;if(need<=0)break;}}
+   for(const e of this.owned(c.side,'army'))if(e.upgrading&&this.upgradeBase(e)?.component===c&&budget>0)budget-=this.investUpgrade(e,Math.min(24*dt,budget));
   }
  }
  validBuild(type,side,x,y,ruinId=null,knownOnly=false){
@@ -113,7 +145,7 @@ class Game{
  move(e,target,dt){
   if(distance(e,target)<.07){e.x=target.x;e.y=target.y;e.path=[];return true;}
   if(!e.path.length)e.path=this.path(e,target)||[];
-  if(!e.path.length)return false;const next=e.path[0],d=distance(e,next),speed=RULES[e.type].speed*(e.energy<1?.45:1),step=Math.min(d,speed*dt);if(d){e.x+=(next.x-e.x)/d*step;e.y+=(next.y-e.y)/d*step;}if(e.type==='army')e.energy=Math.max(0,e.energy-.7*step);if(d<=step+.0001)e.path.shift();return distance(e,target)<.07;
+  if(!e.path.length)return false;const next=e.path[0],d=distance(e,next),speed=e.speed*(e.energy<1?.45:1),step=Math.min(d,speed*dt);if(d){e.x+=(next.x-e.x)/d*step;e.y+=(next.y-e.y)/d*step;}if(e.type==='army')e.energy=Math.max(0,e.energy-.7*step);if(d<=step+.0001)e.path.shift();return distance(e,target)<.07;
  }
  work(e,dt){
   const job=e.jobs[0];if(!job)return;
@@ -136,7 +168,12 @@ class Game{
   }
  }
  recruit(side,type){const hq=this.owned(side,'hq')[0],max=type==='army'?3:2;if(!hq)return '大本营不存在';if(this.owned(side,type).length>=max)return '已达到单位上限';if(hq.energy<RULES[type].cost)return '大本营能源不足';hq.energy-=RULES[type].cost;this.add(type,side,hq.x+(side?-1:1),hq.y+1);this.log('增援 '+RULES[type].name+' 已部署。',side);return null;}
- upgrade(e){if(!e||e.type!=='army')return '请选择战斗群';if(e.level>=5)return '已达到最高等级';const base=this.owned(e.side).find(n=>n.production&&n.progress===null&&distance(n,e)<=3&&n.energy>=90);if(!base)return '需要靠近库存至少 90 的己方能源节点';base.energy-=90;e.level++;e.maxHp+=40;e.hp=Math.min(e.maxHp,e.hp+40);e.attack+=6;e.armor+=8;e.cap+=15;return null;}
+ upgrade(e){
+  if(!e||e.type!=='army'||e.dead||e.ruin)return '请选择战斗群';
+  if(e.level>=MAX_LEVEL)return '已达到最高等级';if(e.upgrading)return '升级正在进行，保持在能源节点三格内以继续投入';
+  if(!this.upgradeBase(e))return '请靠近已完工的己方能源节点（三格内）';
+  e.upgrading={cost:this.upgradeCost(e),paid:0};this.investUpgrade(e,Infinity);return null;
+ }
  repair(e){const base=this.owned(e.side).find(n=>n.production&&n.progress===null&&distance(n,e)<=3&&n.energy>=40);if(!base)return '需要靠近库存至少 40 的己方能源节点';if(e.hp>=e.maxHp)return '生命值已满';base.energy-=40;e.hp=Math.min(e.maxHp,e.hp+90);return null;}
  lineOfSight(a,b){const n=Math.ceil(distance(a,b)*3);for(let i=1;i<n;i++){const x=Math.round(a.x+(b.x-a.x)*i/n),y=Math.round(a.y+(b.y-a.y)*i/n);if(this.terrain[key(x,y)]==='mountain')return false;}return true;}
  canFire(e,t){return t&&!t.dead&&distance(e,t)<=e.range&&this.canSee(e.side,t)&&(e.type==='missile'||this.lineOfSight(e,t));}
@@ -178,23 +215,31 @@ class Game{
   armies=this.owned(side,'army');const assault=armies.length>=3||this.time>140;this.aiState[side]=threat?'紧急回防':assault?'集中进攻':'补给 / 扩张';
   for(const a of armies){
    const base=[...nodes].sort((n,m)=>distance(n,a)-distance(m,a))[0];
+   if(a.upgrading){this.order(a,'move',base);this.repair(a);continue;}
+   // The best surviving group banks the economic advantage instead of capping at level 3.
+   const veteran=[...armies].sort((x,y)=>y.level-x.level||x.id-y.id)[0];
+   const available=nodes.reduce((sum,n)=>sum+n.energy,0);
+   if(!threat&&a===veteran&&a.level<MAX_LEVEL&&available>=Math.min(this.upgradeCost(a),500)&&this.time>(a.nextUpgrade||45)){
+    if(distance(a,base)>3){this.order(a,'move',base);continue;}
+    this.upgrade(a);a.nextUpgrade=this.time+40;if(a.upgrading)continue;
+   }
    if(a.energy<20||a.hp<a.maxHp*.35||a.retreating){a.retreating=true;this.order(a,'move',base);this.repair(a);if(a.energy>a.cap*.8&&a.hp>a.maxHp*.8)a.retreating=false;continue;}
-   if(distance(a,base)<=3&&hq.energy>200&&a.level<3)this.upgrade(a);
+   if(distance(a,base)<=3&&hq.energy>200&&a.level<3&&!a.upgrading)this.upgrade(a);
    if(threat){this.order(a,'attack',threat);continue;}
    if(!assault){this.order(a,'move',{x:hq.x+(side?-2:2),y:hq.y});continue;}
    const targets=enemies.filter(e=>e.building||e.type==='army'||e.type==='pipe').sort((x,y)=>distance(a,x)-distance(a,y));
    const local=targets.find(e=>distance(a,e)<7);if(local)this.order(a,'attack',local);
-   else {const remembered=[...this.memory[side].values()].filter(e=>e.side!==side&&!e.ruin);const goal=remembered.find(e=>e.type==='hq')||{x:side?3:28,y:11};this.order(a,'advance',goal);}
+   else {const remembered=[...this.memory[side].values()].filter(e=>e.side!==side&&!e.ruin);const goal=remembered.find(e=>e.type==='hq')||this.spawns[1-side];this.order(a,'advance',goal);}
   }
  }
  planBuildConnection(e,target){const sources=this.owned(e.side).filter(n=>n.production&&n.progress===null).sort((a,b)=>distance(a,target)-distance(b,target));if(sources[0])this.planPipe(e,sources[0],target);}
 }
-root.EnergyFrontier={Game,RULES,W,H,distance,key};if(typeof module!=='undefined')module.exports=root.EnergyFrontier;
+root.EnergyFrontier={Game,RULES,W,H,distance,key,MAX_LEVEL,DEFAULT_MAP};if(typeof module!=='undefined')module.exports=root.EnergyFrontier;
 })(typeof window!=='undefined'?window:globalThis);
 
 </script><script>
 'use strict';
-const {Game,RULES,W,H,distance,key}=EnergyFrontier;
+const {Game,RULES,W,H,distance,key,MAX_LEVEL}=EnergyFrontier;
 const $=id=>document.getElementById(id),canvas=$('map'),ctx=canvas.getContext('2d'),CELL=32;
 let game=new Game(),selection=null,tool=null,pipeStart=null,hover=null,paused=true,speed=1,view=0,last=performance.now(),accumulator=0,uiClock=0;
 const COLORS=['#52c9f3','#ff8282'];
@@ -211,10 +256,10 @@ function renderPanels(){
  if(!visible){$('selection-kind').textContent='SELECT UNIT';$('selection').innerHTML='<div class="unit-title">等待指令</div><p class="unit-description">点击地图上的单位或建筑查看状态。选择工程队开始建设，选择大本营补充部队。</p>';}
  else{
   $('selection-kind').textContent=e.ruin?'RUINS':e.side===0?'BLUE FORCE':'RED FORCE';const state=e.ruin?'残留废墟 · 可重建 / 清除':e.progress!==null?`施工 ${Math.floor(e.progress/e.buildCost*100)}%` : e.type==='engineer'?e.jobs.length?`施工队列 ${e.jobs.length} 项${e.energy<1?' · 等待供能':''}`:'待命':e.type==='army'?e.energy<2?'缺能 · 低速撤退':e.order?'执行战术指令':'驻守':e.type==='pipe'?e.connected?'管网已连接能源节点':'孤立管段':e.connected?'管网在线':'离网运行';
-  $('selection').innerHTML=`<div class="unit-title" style="color:${COLORS[e.side]}">${RULES[e.type].name}${e.ruin?'废墟':e.type==='army'?' · Lv.'+e.level:''}</div><div class="unit-description">${state}</div>${bar('生命值',e.hp,e.ruin?100:e.maxHp)}${e.cap&&!e.ruin?bar('能源库存',e.energy,e.cap,true):''}<div class="metrics"><div>${e.attack}<small>攻击力</small></div><div>${e.armor}<small>防御力</small></div><div>${e.range||'—'}<small>攻击射程</small></div></div>${!e.ruin?`<p class="muted">产出 ${e.progress===null?e.production:0}/秒 · 基础消耗 ${e.drain}/秒${e.attack?' · 射击额外耗能':''}</p>`:''}`;
+  $('selection').innerHTML=`<div class="unit-title" style="color:${COLORS[e.side]}">${RULES[e.type].name}${e.ruin?'废墟':e.type==='army'?' · Lv.'+e.level:''}</div><div class="unit-description">${state}</div>${bar('生命值',e.hp,e.ruin?100:e.maxHp)}${e.cap&&!e.ruin?bar('能源库存',e.energy,e.cap,true):''}<div class="metrics"><div>${e.attack}<small>攻击力</small></div><div>${e.armor}<small>防御力</small></div><div>${e.range?e.range.toFixed(2):'—'}<small>攻击射程</small></div></div>${e.type==='army'?`<p class="muted">移速 ${e.speed.toFixed(2)} 格/秒 · 等级 ${e.level}/${MAX_LEVEL}${e.upgrading?`<br>升级投入 ${Math.floor(e.upgrading.paid)} / ${e.upgrading.cost}（离开节点暂停）`:''}</p>`:''}${!e.ruin?`<p class="muted">产出 ${e.progress===null?e.production:0}/秒 · 基础消耗 ${e.drain}/秒${e.attack?' · 射击额外耗能':''}</p>`:''}`;
   if(friendly(e)){
    if(e.type==='hq'){$('actions').append(button('补充战斗群 · 130',()=>notify(game.recruit(0,'army')||'战斗群已部署。')),button('补充工程队 · 70',()=>notify(game.recruit(0,'engineer')||'工程队已部署。')));}
-   if(e.type==='army')$('actions').append(button('进攻移动 [A]',()=>setTool('advance')),button('升级 · 90',()=>notify(game.upgrade(e)||'战斗群升级成功。')),button('修复 · 40',()=>notify(game.repair(e)||'已修复 90 生命值。')));
+   if(e.type==='army')$('actions').append(button('进攻移动 [A]',()=>setTool('advance')),button(e.upgrading?`升级投入 ${Math.floor(e.upgrading.paid)} / ${e.upgrading.cost}`:e.level>=MAX_LEVEL?'已满级':`升级 · ${game.upgradeCost(e)} 能源`,()=>notify(game.upgrade(e)||(e.upgrading?'已启动分期升级，保持在节点三格内。':'战斗群升级成功。')),!!e.upgrading||e.level>=MAX_LEVEL),button('修复 · 40',()=>notify(game.repair(e)||'已修复 90 生命值。')));
    if(['army','engineer'].includes(e.type))$('actions').append(button('停止 / 驻守',()=>{e.jobs=[];e.order=null;e.path=[];notify('已停止，原地待命。');}));
   }
  }
@@ -268,7 +313,7 @@ document.querySelectorAll('[data-build]').forEach(b=>b.onclick=()=>setTool(b.dat
 $('pause').onclick=()=>{if(game.winner!==null)return;paused=!paused;renderPanels();};$('step').onclick=()=>{if(!paused)return;for(let i=0;i<10;i++)game.tick(.1);renderPanels();draw();};
 $('speed').onchange=()=>{speed=Number($('speed').value);};$('view').onchange=()=>{view=$('view').value==='all'?'all':Number($('view').value);selection=null;renderPanels();};
 let wasPaused=true;function openSetup(){wasPaused=paused;paused=true;$('setup').returnValue='';$('setup').showModal();} $('restart').onclick=openSetup;
-$('setup').addEventListener('close',()=>{if($('setup').returnValue!=='start'){paused=wasPaused;return;}const seed=Number($('seed').value)||2026;game=new Game({seed,mode:$('mode').value});window.currentGame=game;selection=null;tool=null;pipeStart=null;paused=false;speed=1;accumulator=0;view=game.mode==='ai'?'all':0;$('speed').value='1';$('view').value=String(view);$('view').disabled=game.mode==='human';$('speed').querySelector('[value="8"]').disabled=game.mode==='human';$('banner').hidden=true;notify(game.mode==='ai'?'电脑对战运行中：可切换视角、暂停或单步观察。':'左键选择工程队开始扩张；选择大本营可补充部队。空格暂停。');renderPanels();});
+$('setup').addEventListener('close',()=>{if($('setup').returnValue!=='start'){paused=wasPaused;return;}const seed=Number($('seed').value)||2026;game=new Game({seed,mode:$('mode').value,map:{symmetry:$('map-symmetry').value,mountains:Number($('map-mountains').value),water:Number($('map-water').value),resources:Number($('map-resources').value)}});window.currentGame=game;selection=null;tool=null;pipeStart=null;paused=false;speed=1;accumulator=0;view=game.mode==='ai'?'all':0;$('speed').value='1';$('view').value=String(view);$('view').disabled=game.mode==='human';$('speed').querySelector('[value="8"]').disabled=game.mode==='human';$('banner').hidden=true;notify(`地图已生成：山地 ${game.mapSettings.mountains} 格 / 水域 ${game.mapSettings.water} 格 / 富能源区 ${game.mapSettings.resources} 格。${game.mode==='ai'?'可切换视角、暂停或单步观察。':'左键选择，右键下令，空格暂停。'}`);renderPanels();});
 let helpPaused=true;$('help').onclick=()=>{helpPaused=paused;paused=true;$('guide').showModal();};$('close-guide').onclick=()=>$('guide').close();$('guide').addEventListener('close',()=>{paused=helpPaused;renderPanels();});
 document.addEventListener('keydown',ev=>{if(document.querySelector('dialog[open]')||['INPUT','SELECT','TEXTAREA'].includes(ev.target.tagName))return;if(ev.code==='Space'){ev.preventDefault();$('pause').click();}if(ev.key==='Escape'){tool=null;pipeStart=null;notify('已取消工具。左键选择，右键下令。');}if(ev.key.toLowerCase()==='a'&&friendly(game.get(selection))&&game.get(selection).type==='army')setTool('advance');});
 function frame(now){const delta=Math.min((now-last)/1000,.2);last=now;if(!paused&&!document.querySelector('dialog[open]')){accumulator+=delta*speed;let steps=0;while(accumulator>=.1&&steps++<30){game.tick(.1);accumulator-=.1;}}uiClock+=delta;if(uiClock>.2){renderPanels();uiClock=0;}draw();requestAnimationFrame(frame);}

@@ -8,14 +8,14 @@ const assert=require('node:assert/strict');
  await page.goto(process.env.GAME_URL||'http://127.0.0.1:8765');await page.click('#start');await page.click('#pause');
  assert.equal(await page.locator('#view').isDisabled(),true);
  async function cell(x,y,options={}){const box=await page.locator('#map').boundingBox();await page.mouse.click(box.x+(x+.5)*box.width/32,box.y+(y+.5)*box.height/22,options);}
- await cell(3,11);await page.getByRole('button',{name:'补充战斗群 · 130'}).click();assert.equal(await page.evaluate(()=>currentGame.owned(0,'army').length),2);
- await cell(3,12);await cell(3,5,{button:'right'});await page.evaluate(()=>{for(let i=0;i<100;i++)currentGame.tick(.1)});
- await cell(3,5);await page.locator('[data-build="outpost"]').click();await cell(3,5);
+ await cell(1,11);await page.getByRole('button',{name:'补充战斗群 · 130'}).click();assert.equal(await page.evaluate(()=>currentGame.owned(0,'army').length),2);
+ await cell(1,12);await cell(1,5,{button:'right'});await page.evaluate(()=>{for(let i=0;i<100;i++)currentGame.tick(.1)});
+ await cell(1,5);await page.locator('[data-build="outpost"]').click();await cell(1,5);
  assert.equal(await page.evaluate(()=>currentGame.owned(0,'engineer')[0].jobs.at(-1)?.type),'outpost');
  await page.evaluate(()=>{for(let i=0;i<1000;i++)currentGame.tick(.1)});
  assert.equal(await page.evaluate(()=>currentGame.owned(0,'outpost')[0].progress),null);
  // Real UI manual pipe planning, not just direct simulation calls.
- for(let i=0;i<4&&await page.locator('[data-build="pipe"]').isDisabled();i++)await cell(3,5);await page.locator('[data-build="pipe"]').click();await cell(3,5);await cell(3,3);
+ for(let i=0;i<4&&await page.locator('[data-build="pipe"]').isDisabled();i++)await cell(1,5);await page.locator('[data-build="pipe"]').click();await cell(1,5);await cell(1,3);
  assert.ok(await page.evaluate(()=>currentGame.owned(0,'engineer')[0].jobs.length>0));
  const before=await page.evaluate(()=>currentGame.time);await page.click('#step');const after=await page.evaluate(()=>currentGame.time);assert.ok(Math.abs(after-before-1)<.001);
  await page.click('#help');assert.ok(await page.locator('#guide').isVisible());await page.click('#close-guide');
