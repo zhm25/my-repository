@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>能源前线 · Energy Frontier</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand"><span class="brand-mark">◈</span><div><h1>能源前线 <small>ENERGY FRONTIER</small></h1><p>连接能源 · 推进战线 · 攻陷核心</p></div></div><div class="top-actions"><button id="help">操作指南</button><button id="restart">新战局</button></div></header>
+<main>
+<section class="battle-area">
+<div class="toolbar"><div class="live"><i></i><span id="mode-label">指挥模式</span><span id="clock">00:00</span></div><div class="time-controls"><button id="pause" title="空格暂停">Ⅱ 暂停</button><select id="speed" aria-label="游戏速度"><option value="1">1× 速度</option><option value="2">2× 速度</option><option value="4">4× 速度</option><option value="8">8× 观战</option></select><button id="step" title="暂停时推进一秒">单步</button></div></div>
+<div class="map-wrap"><canvas id="map" width="1024" height="704" aria-label="战场地图，左键选择，右键下令"></canvas><div id="banner" hidden></div></div>
+<div class="map-footer"><span><b class="dot blue"></b>我方 / 蓝方 <b class="dot red"></b>敌方 / 红方</span><span>▲ 山地　≈ 水域　◆ 富能源区　 · 管道</span><span id="coords">32 × 22 战区</span></div>
+<div class="command-hint" id="hint">左键选择单位，右键移动或攻击。先选工程队，再建设管网。</div>
+<section class="event-panel"><div class="section-title">战地通讯 <span>LIVE LOG</span></div><div id="log"></div></section>
+</section>
+<aside>
+<section class="panel"><div class="section-title">战局总览 <span id="seed-label"></span></div><div id="economy"></div><label class="view-label">观察视角 <select id="view"><option value="0">蓝方视野</option><option value="1">红方视野</option><option value="all">全图观察</option></select></label></section>
+<section class="panel selection-panel"><div class="section-title">单位指挥 <span id="selection-kind">SELECT UNIT</span></div><div id="selection"></div><div id="actions"></div></section>
+<section class="panel"><div class="section-title">建设计划 <span>ENGINEERING</span></div><label class="check"><input type="checkbox" id="auto-pipe" checked> 建造建筑时自动规划连接管道</label><div class="build-grid"><button data-build="pipe">╱ 铺设管道 <small>4 能源 / 格</small></button><button data-build="outpost">⬡ 分据点 <small>240 能源</small></button><button data-build="missile">⌖ 导弹基地 <small>180 能源</small></button><button id="rebuild">↻ 重建废墟 <small>原价的 60%</small></button></div><p class="muted">选择工程队后下令。手动铺管：依次点击起点与终点；Shift 可连续追加。Esc 取消工具。</p></section>
+<section class="panel compact"><div class="section-title">战场规则</div><p>大本营失守即失败。节点间距至少 6 格。建筑靠库存运行，管道断裂会切断输送。部队缺能时停火并低速撤退。</p><p class="muted">管道仅连接相邻格；供能建筑周围 3 格、有效管道旁可为部队补给。蓝色 / 红色亮线表示有能源源头的管网。</p></section>
+</aside>
+</main>
+<dialog id="setup"><form method="dialog"><div class="eyebrow">TACTICAL ENERGY WARFARE</div><h2>部署你的能源前线</h2><p>从一座核心出发，建设补给线，以三支精锐战斗群争夺战场。</p><label>战局模式<select id="mode"><option value="human">玩家对电脑 · 战争迷雾</option><option value="ai">电脑对电脑 · 观战测试</option></select></label><label>地图种子<input id="seed" type="number" value="2026" min="1" max="999999999"></label><p class="muted">同一种子产生相同地图。暂停时仍可下令；观战支持双方视角与全图。</p><button class="primary" id="start" value="start">开始部署 →</button></form></dialog>
+<dialog id="guide"><h2>指挥官简报</h2><p><b>选择与下令：</b>左键选中，右键移动 / 攻击。选部队后按“进攻移动”再点击地面。空格暂停，Esc 取消工具。</p><p><b>扩张：</b>选择工程队 → 分据点 → 点击合法位置。勾选自动规划会从最近己方节点向目标铺管。手动铺管时点起点和终点，可按住 Shift 追加路线。</p><p><b>施工：</b>工程队初始携带 60 能源，管道每格用 4；据点用 240，导弹基地用 180，均需持续施工。缺能自动等待，恢复补给后继续。</p><p><b>作战：</b>大本营可补充战斗群（最多 3 支）和工程队（最多 2 支）。选中战斗群可在供能建筑附近升级或修复。不要让部队远离补给太久。</p><p><b>废墟：</b>工程队选择重建，再点击废墟；任一方都能以原价 60% 重建。部队右键可彻底摧毁废墟。大本营毁灭立即结束战局。</p><p><b>观战：</b>新战局选择电脑对电脑，可切换视野、加速，或暂停后单步观察。所有电脑遵守迷雾和能源规则。</p><button id="close-guide" class="primary">收到，返回战场</button></dialog>
+<script src="game.js"></script><script src="ui.js"></script>
+</body></html>
